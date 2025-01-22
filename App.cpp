@@ -73,17 +73,21 @@ void app()
         switch (option)
         {
         case 1:
+
             cout << "Informe o ID para busca: ";
             cin >> searchId;
             if (cin.fail())
                 invalidInput();
 
             tp = set.searchPersonById(searchId);
-            if (!(tp.id == -1))
+            if (!(tp.id == -1)){
+                system("clear||cls");
                 set.printPerson(tp);
-            else
+            }
+            else{
+                system("clear||cls");
                 cerr << "Nenhum registro com ID: " << searchId << " pode ser encontrado. " << endl;
-
+            }
             break;
 
         case 2:
@@ -91,6 +95,7 @@ void app()
             break;
 
         case 3:
+            system("clear||cls");
             cout << "Informe o nome do arquivo .CSV: ";
             cin >> csvFileName;
             csvFileName = csvFileName + ".csv";
@@ -98,6 +103,7 @@ void app()
             break;
 
         case 4:
+            system("clear||cls");
             cout << "Informe o nome do arquivo .CSV: ";
             cin >> csvFileName;
             csvFileName = csvFileName + ".csv";
@@ -105,10 +111,12 @@ void app()
             break;
 
         case 5:
+			system("clear||cls");
             set.printFile(false);
             break;
 
         case 6:
+			system("clear||cls");
             set.printFile(true);
             break;
 
@@ -122,6 +130,7 @@ void app()
             break;
 
         case 8:
+            system("clear||cls");
             cout << "Informe o nome do arquivo .CSV: ";
             cin >> csvFileName;
             csvFileName = csvFileName + ".csv";
