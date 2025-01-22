@@ -126,6 +126,7 @@ void SequenceSet::insertPerson(const Person &person)
 
         if (searchPersonById(person.id).id != -1)
         {
+            system("clear||cls");
             cerr << "Erro: ID ja cadastrado. Cada ID deve ser unico!" << endl;
             return;
         }
@@ -310,6 +311,7 @@ void SequenceSet::removePerson(const Person &pToRemove)
                 writeHeader(file, header);
                 readHeader(file);
 
+                system("clear||cls");
                 cout << "Registro removido com sucesso." << endl;
                 return;
             }
@@ -319,6 +321,7 @@ void SequenceSet::removePerson(const Person &pToRemove)
             currentBlockPos = currentBlock.nextBlock;
         }
 
+        system("clear||cls");
         cerr << "Registro nao encontrado." << endl;
     }
 }
@@ -389,6 +392,7 @@ void SequenceSet::saveToCSV(const string &csvFileName)
     ofstream csvFile(csvFileName);
     if (!csvFile.is_open())
     {
+        system("clear||cls");
         cerr << "Erro: Não foi possível criar o arquivo CSV." << endl;
         return;
     }
@@ -425,6 +429,8 @@ void SequenceSet::saveToCSV(const string &csvFileName)
         iterator = block.nextBlock;
         i++;
     }
+
+    system("clear||cls");
     cout << "Arquivo salvo com sucesso!" << endl;
     csvFile.close();
 }
