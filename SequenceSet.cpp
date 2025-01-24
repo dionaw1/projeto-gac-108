@@ -387,6 +387,7 @@ void SequenceSet::insertFromCSV(const string &csvFileName, bool keepFile)
 }
 
 // Escreve os registros da estrutura no formatos CSV padrao da base de dados.
+/*
 void SequenceSet::saveToCSV(const string &csvFileName)
 {
     ofstream csvFile(csvFileName);
@@ -433,7 +434,7 @@ void SequenceSet::saveToCSV(const string &csvFileName)
     system("clear||cls");
     cout << "Arquivo salvo com sucesso!" << endl;
     csvFile.close();
-}
+}*/
 
 // Metodo para facilitar a manutencao do codigo, imprime no console um registro formatado.
 void SequenceSet::printPerson(const Person &p)
