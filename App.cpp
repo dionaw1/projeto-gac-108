@@ -9,12 +9,10 @@ void printMenu()
     cout << "=========== Menu ===========" << endl
          << "[1] Procurar registro (ID)." << endl
          << "[2] Inserir novo registro no terminal." << endl
-         << "[3] Inserir novos registros por arquivo CSV. (Preservar registros atuais)." << endl
-         << "[4] Importar dados de um arquivo CSV. (Substituir registros atuais)." << endl
-         << "[5] Exibir todos os blocos." << endl
-         << "[6] Exibir todos os registros." << endl
-         << "[7] Remover registro." << endl
-         << "[8] Exportar registros para um arquivo CSV." << endl
+         << "[3] Importar dados de um arquivo CSV." << endl
+         << "[4] Exibir todos os blocos." << endl
+         << "[5] Exibir todos os registros." << endl
+         << "[6] Remover registro." << endl
          << "[0] Finalizar o programa." << endl;
 }
 
@@ -99,42 +97,26 @@ void app()
             cout << "Informe o nome do arquivo .CSV: ";
             cin >> csvFileName;
             csvFileName = csvFileName + ".csv";
-            set.insertFromCSV(csvFileName, true);
+            set.insertFromCSV(csvFileName, false);
             break;
 
         case 4:
-            system("clear||cls");
-            cout << "Informe o nome do arquivo .CSV: ";
-            cin >> csvFileName;
-            csvFileName = csvFileName + ".csv";
-            set.insertFromCSV(csvFileName, false);
+			      system("clear||cls");
+            set.printFile(false);
             break;
 
         case 5:
 			system("clear||cls");
-            set.printFile(false);
-            break;
-
-        case 6:
-			system("clear||cls");
             set.printFile(true);
             break;
 
-        case 7:
+        case 6:
             cout << "Informe o ID para remocao: ";
             cin >> searchId;
             if (cin.fail())
                 invalidInput();
 
             set.removePerson(set.searchPersonById(searchId));
-            break;
-
-        case 8:
-            system("clear||cls");
-            cout << "Informe o nome do arquivo .CSV: ";
-            cin >> csvFileName;
-            csvFileName = csvFileName + ".csv";
-            set.saveToCSV(csvFileName);
             break;
 
         case 0:
