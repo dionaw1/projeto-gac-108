@@ -8,7 +8,6 @@ O projeto implementa um SequenceSet baseado em uma base de dados disponibilizada
 
 O sistema pode:
     Importar registros de um arquivo .csv
-    Exportar registros do SequenceSet para um arquivo .csv
     Inserir novos registros
     Remover registros especificos
     Buscar registros especificos
